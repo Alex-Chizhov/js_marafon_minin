@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+.slide {
+  /* 80% от видимой части экрана */
+  height: 80vh;
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  /* Cпособность гибкого элемента растягиваться или сжиматься для заполнения собой доступного свободного пространста */
+  flex: 1;
+  /* Масштабирует изображение как можно больше c сохранением пропорций изображения (изображение не становится сплющенным). Когда изображение и контейнер имеют разные размеры, изображение обрезается либо влево / вправо, либо сверху / снизу. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Положение элемента устанавливается относительно его исходного места. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения. */
+  position: relative;
+  /* Анимация для сладов */
+  transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+  /* Элемент удаляется из обычного потока документов, и для элемента в макете страницы не создаётся пробела. Он расположен относительно его ближайшего относительно позиционированного предка, если таковой имеется; в противном случае он помещается относительно исходного содержащего блока. Его конечная позиция определяется значениями top, right, bottom, и left. */
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3{
+  opacity: 1;
+  /* Добавляем анимацию */
+  transition: opacity 0.3s ease-in 0.4s;
+}
