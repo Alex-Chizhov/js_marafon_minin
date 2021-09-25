@@ -35,3 +35,12 @@ upBtn.addEventListener('click', () => {
 downBtn.addEventListener('click', () => {
     changeSlide('down')
 })
+
+// Прокрутка слайдера по нажатию стрелок на клавиатуре
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowUp') {
+        changeSlide('up')
+    }else if (event.key === 'ArrowDown') {
+        changeSlide('down')
+    }
+})
